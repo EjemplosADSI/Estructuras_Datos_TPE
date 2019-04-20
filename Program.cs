@@ -37,6 +37,7 @@ namespace Estructuras_Datos_TPE
                         break;
                     case 4:
                         System.Console.WriteLine("\n\n Eliminar un nodo en la pila \n");
+                        P.eliminarNodo();
                         break;
                     case 5:
                         System.Console.WriteLine("\n\n Desplegar pila de nodos \n");

@@ -92,6 +92,51 @@ namespace Estructuras_Datos_TPE
             }
         }
 
+        public void eliminarNodo()
+        {
+            Nodo Actual = new Nodo();
+            Actual = Primero;
+            Nodo Anterior = new Nodo();
+            Anterior = null; 
+
+            bool Encontrado = false;
+            System.Console.WriteLine(" Ingrese el dato del nodo a buscar para eliminarlo");
+            int nodoBuscado = int.Parse(Console.ReadLine());
+
+            if (Primero != null)
+            {
+                while (Actual != null && Encontrado != true)
+                {
+                    if(Actual.Dato == nodoBuscado)
+                    {
+                        System.Console.WriteLine("\n El nodo con el dato ( {0} ) Encontrado\n", nodoBuscado);
+                        
+                        if (Actual == Primero)
+                        {
+                            Primero = Primero.Siguiente;
+                        }else{
+                            Anterior.Siguiente = Actual.Siguiente;
+                        }
+                        System.Console.WriteLine("\n El nodo Eliminado\n");
+                        
+                        Encontrado = true;
+                    }
+                    Anterior = Actual;
+                    Actual = Actual.Siguiente;
+                }
+
+                if (!Encontrado)
+                {
+                    System.Console.WriteLine("\n Nodo no encontrado\n");
+                }
+
+            }
+            else
+            {
+                System.Console.WriteLine("\n La pila se encuentra vacia\n\n");
+            }
+        }
+
         public void desplegarPila()
         {
             Nodo Actual = new Nodo();
